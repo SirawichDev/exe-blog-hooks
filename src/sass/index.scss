@@ -1,0 +1,13 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Handlee|IBM+Plex+Mono|Krub&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Handlee|Krub&display=swap');
+@import './variables';
+@import './navbar.scss';
+@import './footer.scss';
+
+
+* {
+    font-family: 'IBM Plex Mono', monospace;
+// font-family: 'Krub', sans-serif;
+}
