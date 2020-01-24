@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import { Layout, Menu, Breadcrumb, Icon, Col, Row } from "antd"
 
@@ -10,17 +10,19 @@ const { Content } = Layout
 interface Prop {
   children?: any
 }
-const Layouts = ({ children } : Prop) => {
+const Layouts : FC<Prop> = ({children}) => {
   return (
     <>
     <Row>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Col span={24}>
+      <Layout style={{ minHeight: "100vh", minWidth: "100vw" }}>
         <Navbar />
-        <Col span={24} offset={6}>
+  
         <Content className="content">{children}</Content>
-        </Col>
+ 
         <Footer />
       </Layout>
+      </Col>
       </Row>
     </>
   )
