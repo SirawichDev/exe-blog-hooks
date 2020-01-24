@@ -1,50 +1,49 @@
 import React from "react"
 import "../sass/navbar.scss"
-import { Layout, Menu, Icon, Row, Col } from "antd"
+import { Layout, Menu, Icon, Row, Col, Breadcrumb, Typography } from "antd"
 import { Link } from "gatsby"
-const { Header } = Layout
+import HeaderText from "./HeaderText"
+const { Header, Content } = Layout
+const { Text } = Typography
 const NavBar = () => {
   return (
     <Row>
-      <Header className="header">
-        <div className="logo" />
-        <Col span={12} offset={6}>
-          <Menu theme="light" mode="horizontal" style={{ lineHeight: "64px" }}>
-            <Col span={6} offset={2}>
-              <Menu.Item key="1" className="with-icon">
-                {" "}
-                <Link to="/">
-                  <Col span={4}>
-                    <Icon type="home" />
-                  </Col>
-                  Home
-                </Link>
+      <Col span={24}>
+        <Header className="header" style={{ backgroundColor: "transparent" }}>
+          <Col span={12}>
+            <Text>LOGO</Text>
+          </Col>
+          <Col span={12}>
+            <Menu
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={["1"]}
+              style={{ lineHeight: "64px" }}
+            >
+              <Menu.Item key="1">
+                <Icon type="home" />
+                Home
               </Menu.Item>
-            </Col>
-            <Col span={6} offset={2}>
-              <Menu.Item key="2" className="with-icon">
-                {" "}
-                <Link to="/blog/">
-                  {" "}
-                  <Col span={4}>
-                    <Icon type="fire" />
-                  </Col>
-                  Blog
-                </Link>
+              <Menu.Item key="2">
+                <Icon type="code" />
+                Blog
               </Menu.Item>
-            </Col>
-            <Col span={6} offset={2}>
-              <Menu.Item key="3" className="with-icon">
+              <Menu.Item>
                 {" "}
-                <Col span={4}>
-                  <Icon type="inbox" />
-                </Col>
+                <Icon type="sync" spin />
+                Lift Style
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Icon type="phone" />
                 Contact
               </Menu.Item>
-            </Col>
-          </Menu>
-        </Col>
-      </Header>
+            </Menu>
+          </Col>
+        </Header>
+        <Content>
+          <HeaderText text="Welcome To My Blog"/>
+        </Content>
+      </Col>
     </Row>
   )
 }

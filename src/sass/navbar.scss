@@ -3,30 +3,29 @@ $height: $size / 8;
 $margin: $size / 3.2;
 $toggle: ($size + $margin*2) * 1.5; 
 
-
-.with-icon {
-    // display: flex !important;
-    // flex-direction: row;
-    
-
-}
-.header{
-
+.header {
+    position: absolute;
     background-color: transparent;
+    z-index: 99;
+    min-width: 100vw;
 }
-// .ant-menu{
 
-//         display: flex;
-//         justify-content: space-between;
-//         box-sizing: border-box;
-//         background: white;
-//         padding: $size;
-//         width: 500px;
-//         top: 40px;
-//         border-radius: $size/6;
-//         overflow: visible;
-//         position: absolute;
-//         box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
-  
+.backgroundImage {
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    background-position: 0 500px;
+}
 
-// }
+.header-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 100vw;
+    background: #fff;
+    min-height: 400px;
+
+    .big-text{
+        font-size: 34px;
+    }
+}
