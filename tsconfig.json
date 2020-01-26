@@ -1,5 +1,6 @@
 {
-    "compilerOptions": {
+    "compilerOptions": {     
+      "moduleResolution": "node",
       "module": "commonjs",
       "target": "esnext",
       "jsx": "preserve",
@@ -8,7 +9,6 @@
       "noEmit": true,
       "isolatedModules": true,
       "esModuleInterop": true,
-      "noUnusedLocals": false,
       "allowJs": true
     },
     "exclude": ["node_modules", "public", ".cache"]
