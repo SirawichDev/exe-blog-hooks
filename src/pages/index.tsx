@@ -2,9 +2,6 @@ import React, { FC } from "react"
 import { Link } from "gatsby"
 
 import Layouts from "../components/Layout/layout"
-// import Image from "../components/image"
-import SEO from "../components/seo"
-
 import "../sass/index.scss"
 import SubList from "../components/SubList"
 import { Row, Col, Layout } from "antd"
@@ -19,7 +16,6 @@ const IndexPage: FC<Props> = ({ location }) => {
   return (
     <Layouts>
       <Row type="flex" justify="center" style={{ backgroundColor: "#f6f6f6" }}>
-        <SEO title="Home" />
         <Col span={24}>
           <Content>
             <HeaderText text="Welcome To My Home" />
