@@ -1,7 +1,7 @@
 {
     "extends": ["tslint-react"],
     "rules": {
-      "prettier": true,
+      "prettier": true,  "moduleResolution": "node",
       "jsx-no-multiline-js": false,
       "jsx-no-lambda": false,
       "import-name": false,
