@@ -1,15 +1,16 @@
-import React from "react"
+import React, { FC } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
+import HeaderText from "../components/HeaderText"
 
-const Blog = () => (
+type Props = {
+  location?: any
+}
+const Blog: FC<Props> = ({ location }) => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <HeaderText text={`Welcome To My ${location.state.pathName}`} />
   </Layout>
 )
 
