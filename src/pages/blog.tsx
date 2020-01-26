@@ -8,13 +8,18 @@ import HeaderText from "../components/HeaderText"
 type Props = {
   location?: any
 }
-const Blog: FC<Props> = ({ location }) => (
-  <Layout>
-    { location.state.pathName !== undefined ? 
-    <HeaderText text={`Welcome To My ${location.state.pathName}`} /> :
-    <HeaderText text={`Welcome To My Home`} />
-    }
-  </Layout>
-)
+const Blog: FC<Props> = ({ location }) => {
+
+  const pathName = !location.state.pathName
+  return (
+    <Layout>
+      {pathName ? (
+        <HeaderText text={`Welcome To My ${pathName}`} />
+      ) : (
+        <HeaderText text={`Welcome To My Home`} />
+      )}
+    </Layout>
+  )
+}
 
 export default Blog
