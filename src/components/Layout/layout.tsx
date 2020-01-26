@@ -9,13 +9,15 @@ const { Content } = Layout
 
 interface Prop {
   children?: any
+  location?:any
 }
-const Layouts : FC<Prop> = ({children}) => {
+const Layouts : FC<Prop> = ({children, location}) => {
+  console.log('prop', location)
   return (
     <>
     <Row>
       <Col span={24}>
-      <Layout style={{ minHeight: "100vh", minWidth: "100vw" }}>
+      <Layout style={{ minHeight: "100vh", minWidth: "100vw", backgroundColor: 'white'}}>
         <Navbar />
   
         <Content className="content">{children}</Content>
