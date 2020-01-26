@@ -16,7 +16,7 @@ type Props = {
   location?: any
 }
 const IndexPage: FC<Props> = ({ location }) => {
-  console.log('in',location.state.pathName)
+  // console.log('in',location.state.pathName)
   return (
     <Layouts>
       <Row type="flex" justify="center" style={{ backgroundColor: "#f6f6f6" }}>
