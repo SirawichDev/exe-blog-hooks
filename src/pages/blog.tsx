@@ -9,7 +9,7 @@ type Props = {
   location?: any
 }
 const Blog: FC<Props> = ({ location }) => {
-  const pathName = !location.state.pathName
+  // const pathName = !location.state.pathName
   return (
     <Layout>
       {/* {pathName ? (
