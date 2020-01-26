@@ -10,7 +10,10 @@ type Props = {
 }
 const Blog: FC<Props> = ({ location }) => (
   <Layout>
-    <HeaderText text={`Welcome To My ${location.state.pathName}`} />
+    { location ? 
+    <HeaderText text={`Welcome To My ${location.state.pathName}`} /> :
+    <HeaderText text={`Welcome To My Home`} />
+    }
   </Layout>
 )
 
