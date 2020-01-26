@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import {Typography, Col} from 'antd'
+import {Typography, Col, Row} from 'antd'
 
 const { Text } = Typography
 
@@ -9,12 +9,15 @@ type HtextProps = {
 const HeaderText: FC<HtextProps> = ({text}) => {
     return (
         <div className="header-text">
-        <Col>
+          <Row type="flex" justify="center" align="middle">
+        <Col sm={24} xs={15}>
           <Text strong className="big-text">
             - {text} -
           </Text>{" "}
         </Col>
+        </Row>
       </div>
+      
     )
 }
 
