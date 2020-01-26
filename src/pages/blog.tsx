@@ -2,7 +2,6 @@ import React, { FC } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout/layout"
-import SEO from "../components/seo"
 import HeaderText from "../components/HeaderText"
 
 type Props = {

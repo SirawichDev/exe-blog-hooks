@@ -9,7 +9,9 @@
       "noEmit": true,
       "isolatedModules": true,
       "esModuleInterop": true,
-      "allowJs": true
+      "allowJs": true,
+      "sourceMap": true
     },
-    "exclude": ["node_modules", "public", ".cache"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "public", ".cache","**/*.spec.ts"]
   }
