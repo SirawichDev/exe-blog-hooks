@@ -12,7 +12,6 @@ interface Prop {
   location?:any
 }
 const Layouts : FC<Prop> = ({children, location}) => {
-  console.log('prop', location)
   return (
     <>
     <Row>

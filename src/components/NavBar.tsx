@@ -10,7 +10,6 @@ interface Props {
   location?: any
 }
 const NavBar: FC<Props> = ({ location }) => {
-  console.log("xx", location)
   return (
     <Row type="flex" justify="end">
       <Header className="header" style={{ backgroundColor: "transparent" }}>
