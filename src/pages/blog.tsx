@@ -9,15 +9,15 @@ type Props = {
   location?: any
 }
 const Blog: FC<Props> = ({ location }) => {
-
   const pathName = !location.state.pathName
   return (
     <Layout>
-      {pathName ? (
+      {/* {pathName ? (
         <HeaderText text={`Welcome To My ${pathName}`} />
       ) : (
         <HeaderText text={`Welcome To My Home`} />
-      )}
+      )} */}
+      <HeaderText text={`Welcome To My Home`} />
     </Layout>
   )
 }
