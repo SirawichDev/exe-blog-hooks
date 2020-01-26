@@ -1,49 +1,57 @@
-import React from "react"
+import React, { FC } from "react"
 import "../sass/navbar.scss"
 import { Layout, Menu, Icon, Row, Col, Breadcrumb, Typography } from "antd"
 import { Link } from "gatsby"
 import HeaderText from "./HeaderText"
 const { Header, Content } = Layout
 const { Text } = Typography
-const NavBar = () => {
+
+interface Props {
+  location?: any
+}
+const NavBar: FC<Props> = ({ location }) => {
+  console.log("xx", location)
   return (
-    <Row>
-      <Col span={24}>
-        <Header className="header" style={{ backgroundColor: "transparent" }}>
-          <Col span={12}>
-            <Text>LOGO</Text>
-          </Col>
-          <Col span={12}>
+    <Row type="flex" justify="end">
+      <Header className="header" style={{ backgroundColor: "transparent" }}>
+        <Col span={12}>
+          <Text>LOGO</Text>
+        </Col>
+        <Row type="flex" justify="end">
+          <Col sm={23} xs={10} lg={18}>
             <Menu
               theme="light"
               mode="horizontal"
               defaultSelectedKeys={["1"]}
-              style={{ lineHeight: "64px" }}
+              style={{ lineHeight: "64px", border: "none" }}
             >
               <Menu.Item key="1">
-                <Icon type="home" />
-                Home
+                <Link state={{ pathName: "home" }} to="/">
+                  <Icon type="home" />
+                  Home{" "}
+                </Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Icon type="code" />
-                Blog
+                <Link state={{ pathName: "blog" }} to="/blog">
+                  <Icon type="code" />
+                  Blog{" "}
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 {" "}
+                <Link to="/lifeStyle" state={{pathName: "life_style"}}>
                 <Icon type="sync" spin />
-                Lift Style
+                Lift Style</Link>
               </Menu.Item>
               <Menu.Item key="3">
+                <Link to="/contact">
                 <Icon type="phone" />
-                Contact
+                Contact</Link>
               </Menu.Item>
             </Menu>
           </Col>
-        </Header>
-        <Content>
-          <HeaderText text="Welcome To My Blog"/>
-        </Content>
-      </Col>
+        </Row>
+      </Header>
     </Row>
   )
 }
