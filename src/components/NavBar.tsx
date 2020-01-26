@@ -20,6 +20,7 @@ const NavBar: FC<Props> = ({ location }) => {
         <Row type="flex" justify="end">
           <Col sm={23} xs={10} lg={18}>
             <Menu
+              className="nav-transparent"
               theme="light"
               mode="horizontal"
               defaultSelectedKeys={["1"]}
@@ -39,14 +40,16 @@ const NavBar: FC<Props> = ({ location }) => {
               </Menu.Item>
               <Menu.Item>
                 {" "}
-                <Link to="/lifeStyle" state={{pathName: "life_style"}}>
-                <Icon type="sync" spin />
-                Lift Style</Link>
+                <Link to="/lifeStyle" state={{ pathName: "life_style" }}>
+                  <Icon type="sync" spin />
+                  Lift Style
+                </Link>
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to="/contact">
-                <Icon type="phone" />
-                Contact</Link>
+                  <Icon type="phone" />
+                  Contact
+                </Link>
               </Menu.Item>
             </Menu>
           </Col>
