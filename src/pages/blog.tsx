@@ -10,7 +10,7 @@ type Props = {
 }
 const Blog: FC<Props> = ({ location }) => (
   <Layout>
-    { location.state.location !== undefined ? 
+    { location.state.pathName !== undefined ? 
     <HeaderText text={`Welcome To My ${location.state.pathName}`} /> :
     <HeaderText text={`Welcome To My Home`} />
     }
