@@ -16,7 +16,6 @@ type Props = {
   location?: any
 }
 const IndexPage: FC<Props> = ({ location }) => {
-  // console.log('in',location.state.pathName)
   return (
     <Layouts>
       <Row type="flex" justify="center" style={{ backgroundColor: "#f6f6f6" }}>
@@ -30,7 +29,7 @@ const IndexPage: FC<Props> = ({ location }) => {
       </Row>
       <Row type="flex" gutter={2} justify="space-around">
         <CardList />
-        <CardList />
+
       </Row>
     </Layouts>
   )

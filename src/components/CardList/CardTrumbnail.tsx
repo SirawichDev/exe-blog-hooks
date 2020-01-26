@@ -4,11 +4,15 @@ import { Row, Col } from "antd"
 
 const CardThumb = () => {
   return (
-    <div className="blog-item-thumb">
-      <a>
-        <img src={Rabbit} alt="blog thumb" />
-      </a>
-    </div>
+    <Row type="flex">
+      <Col>
+        <div className="blog-item-thumb">
+          <a>
+            <img src={Rabbit} alt="blog thumb" />
+          </a>
+        </div>
+      </Col>
+    </Row>
   )
 }
 
