@@ -8,6 +8,7 @@ $toggle: ($size + $margin*2) * 1.5;
     background-color: transparent;
     z-index: 99;
     min-width: 100vw;
+  
 }
 
 .backgroundImage {
@@ -21,11 +22,13 @@ $toggle: ($size + $margin*2) * 1.5;
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 100vw;
     background: #fff;
     min-height: 400px;
 
     .big-text{
         font-size: 34px;
     }
+}
+.nav-transparent{
+    background-color: transparent;
 }
