@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import { Link } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/layout"
 import HeaderText from "../components/HeaderText"
@@ -7,16 +7,24 @@ import HeaderText from "../components/HeaderText"
 type Props = {
   location?: any
 }
-const Blog: FC<Props> = ({ location }) => {
+
+export const queryPath = graphql`
+  query {
+    allSitePage {
+      edges {
+        node {
+          path
+        }
+      }
+    }
+  }
+`
+const Blog = (queryPath : any) => {
+  console.log("ss", queryPath.path.split("/")[1])
   // const pathName = !location.state.pathName
   return (
     <Layout>
-      {/* {pathName ? (
-        <HeaderText text={`Welcome To My ${pathName}`} />
-      ) : (
-        <HeaderText text={`Welcome To My Home`} />
-      )} */}
-      <HeaderText text={`Welcome To My Home`} />
+      <HeaderText text={`Welcome To My ${queryPath.path.split("/")[1]}`} />
     </Layout>
   )
 }

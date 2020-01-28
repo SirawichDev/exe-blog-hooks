@@ -1,0 +1,23 @@
+.sub-list-link {
+  display: inline-block;
+  background-color: transparent;
+  padding: 2px 8px;
+  color: #0a0a0a;
+  font-weight: 300;
+  font-size: 0.95em;
+  border-radius: 2px;
+  border: 1px solid transparent !important;
+  &:hover {
+    opacity: 1;
+    background: #4e57ef;
+    color: white;
+    border: 1px solid #cfd7ff;
+    box-shadow: 3px 4px 0px #cfd7ff;
+  }
+}
+.selected {
+  background: #cfd7ff !important;
+  color: #0a0a0a !important;
+  border: 1px solid #4e57ef;
+  box-shadow: 3px 4px 0px #4e57ef;
+}
