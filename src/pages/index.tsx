@@ -8,6 +8,7 @@ import { Row, Col, Layout } from "antd"
 const { Content } = Layout
 import CardList from "../components/CardList"
 import HeaderText from "../components/HeaderText"
+import CardAudio from "../components/CardList/CardAudio"
 
 type Props = {
   location?: any
@@ -25,7 +26,8 @@ const IndexPage: FC<Props> = ({ location }) => {
       </Row>
       <Row type="flex" gutter={2} justify="space-around">
         <CardList />
-
+        <CardAudio/>
+        <CardList withVid/>
       </Row>
     </Layouts>
   )
