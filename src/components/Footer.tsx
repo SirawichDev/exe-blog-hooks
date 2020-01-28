@@ -1,29 +1,49 @@
-import React from 'react'
-import {Layout, Row} from 'antd'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { Layout, Row, Icon, Col } from "antd"
+import { useStaticQuery, graphql } from "gatsby"
 
-const siteQuery = graphql`{
-
+const siteQuery = graphql`
+  {
     site {
-        siteMetadata{
-            author
-            title
-        }
+      siteMetadata {
+        author
+        title
+      }
     }
-}
+  }
 `
 
-const {Footer} = Layout
+const { Footer } = Layout
 const Footers = () => {
-    const {site: {siteMetadata},} = useStaticQuery(siteQuery)
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(siteQuery)
 
-    console.log('ss',siteMetadata)
+  console.log("ss", siteMetadata)
 
-    return (
+  return (
     <Footer>
-        <Row type="flex" justify="end">
-        Created By {siteMetadata.author}</Row></Footer>
-    )
+      <Row type="flex" justify="center">
+        <Col> Created By {siteMetadata.author}</Col>
+      </Row>
+      <Row type="flex" justify="center" style={{ marginTop: "20px" }}>
+        <Col span={2}>
+          {" "}
+          <a href="https://github.com/SirawichDev">
+            <Icon type="github" style={{ fontSize: "30px" }} />
+          </a>
+        </Col>
+        <Col span={2}>
+          {" "}
+          <a href="https://www.facebook.com/mrbad.manex">  <Icon type="facebook" style={{ fontSize: "30px" }} /> </a>
+        </Col>
+        <Col>
+          {" "}
+          <a href="https://www.instagram.com/sirawichexe/"> <Icon type="instagram" style={{ fontSize: "30px" }} /></a>
+        </Col>
+      </Row>
+    </Footer>
+  )
 }
 
 export default Footers
