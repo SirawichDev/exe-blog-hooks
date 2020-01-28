@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react"
+import Layouts from "../components/Layout/layout"
 
 const LifeStyle = () => {
-    return (
-        <h1>Life Style</h1>
-    )
+  return (
+    <Layouts>
+      <h1>Life Style</h1>
+    </Layouts>
+  )
 }
 
 export default LifeStyle
