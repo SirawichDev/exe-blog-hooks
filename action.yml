@@ -26,4 +26,4 @@ branding:
   icon: 'umbrella'
 runs:
   using: 'node12'
-  main: 'src'
+  main: 'src/main.ts'
