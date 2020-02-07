@@ -6,9 +6,7 @@
   }
 
   & .blog-item-thumb {
- 
     overflow: hidden;
-
 
     & img {
       width: 270px;
@@ -73,12 +71,12 @@
 
   &:hover .blog-item-thumb a::before,
   &:hover .blog-item-thumb a::after {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-  visibility: visible;
-}
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .blog-item-content {
@@ -268,34 +266,34 @@
   min-height: 386px;
 }
 
-.blog-item-video{
-  .blog-item-thumb{
-      position: relative;
-      a:not(.video-play-trigger){
-          &::before{
-              left: 0;
-              top: 0;
-              height: 100%;
-              width: 100%;
-              background: rgba(255,255,255,0.5);
-              visibility: visible;
-              opacity: 1;
-              transform: scale(1);
-          }
-          &::after{
-              display: none;
-          }
+.blog-item-video {
+  .blog-item-thumb {
+    position: relative;
+    a:not(.video-play-trigger) {
+      &::before {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
       }
-      .exe-video-btn{
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
+      &::after {
+        display: none;
       }
-  } 
+    }
+    .exe-video-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
-.exe-video-btn{
+.exe-video-btn {
   width: 80px;
   height: 80px;
   display: inline-block;
@@ -304,56 +302,54 @@
   font-size: 20px;
   position: relative;
   z-index: 1;
-  
-  span{
-      height: 80px;
-      width: 80px;
-      background: #ffffff;
-      display: inline-block;
-      border-radius: 1000px;
-      padding: 25px 0;
-      transition: all 0.4s ease-out 0s;
-      img{
-          padding-left: 5px;
-      }
+
+  span {
+    height: 80px;
+    width: 80px;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 1000px;
+    padding: 25px 0;
+    transition: all 0.4s ease-out 0s;
+    img {
+      padding-left: 5px;
+    }
   }
 
-
-  &::before, &::after{
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: 100%;
-      background: rgba(255,255,255,0.4);
-      z-index: -1;
-      animation: crZoomInOutInvisible 1s ease-in-out infinite backwards;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+    animation: crZoomInOutInvisible 1s ease-in-out infinite backwards;
   }
 
-  &::after{
-      animation-delay: 0.3s;
+  &::after {
+    animation-delay: 0.3s;
   }
 
-  &.exe-video-btn-small{
-      width: 60px;
+  &.exe-video-btn-small {
+    width: 60px;
+    height: 60px;
+    span {
       height: 60px;
-      span{
-          height: 60px;
-          width: 60px;
-          padding: 14px 20px;
-          img{
-              padding-left: 3px;
-          }
+      width: 60px;
+      padding: 14px 20px;
+      img {
+        padding-left: 3px;
       }
+    }
   }
-  
 }
 .blog-item-image .blog-item-thumb {
   width: 100%;
 }
-
 
 .blog-item-qote,
 .blog-item-audio,
@@ -401,7 +397,6 @@ button.cr-readmore {
     position: relative;
     overflow: hidden;
     img {
-      
       transition: all 0.3s ease-in-out 0s;
       position: absolute;
       &:first-child {
@@ -429,24 +424,31 @@ button.cr-readmore {
     }
   }
 }
+
+.post-tag {
+  font-size: 14px;
+  margin-right: 6px;
+  font-weight: 400;
+  color: rgb(209, 0, 104);
+}
 @-webkit-keyframes crZoomInOutInvisible {
   0% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
   100% {
-      transform: scale(1.6);
-      opacity: 0;
+    transform: scale(1.6);
+    opacity: 0;
   }
 }
 
 @keyframes crZoomInOutInvisible {
   0% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
   100% {
-      transform: scale(1.6);
-      opacity: 0;
+    transform: scale(1.6);
+    opacity: 0;
   }
 }

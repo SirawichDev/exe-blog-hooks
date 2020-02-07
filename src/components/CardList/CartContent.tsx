@@ -21,13 +21,27 @@ const CardContent = () => {
                 </a>
               </h4>
             </Col>
-            <div className="blog-item-share">
+            <Col>
+              <div className="post-tag-container">
+                <a className="post-tag">
+                  # dart
+              </a>
+
+                <a className="post-tag">
+                  # flutter
+              </a>
+                <a className="post-tag">
+                  # cross-platform
+              </a>
+              </div>
+            </Col>
+            {/* <div className="blog-item-share">
               <Col span={24}>
                 <button className="blog-item-share-toggle">
-                  <Icon type="share-alt" style={{fontSize: '20px', marginRight: '1px'}} /> <p>Shared</p>
+                  <Icon type="share-alt" style={{ fontSize: '20px', marginRight: '1px' }} /> <p>Shared</p>
                 </button>
               </Col>
-            </div>
+            </div> */}
             <Col span={24}>
               <a href="blog-details.html" className="exe-readmore">
                 Read More
