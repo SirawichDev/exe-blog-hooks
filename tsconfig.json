@@ -3,6 +3,7 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "esnext",
+    "baseUrl": "./src/",
     "jsx": "preserve",
     "lib": ["dom", "esnext"],
     "strict": true,
