@@ -1,3 +1,8 @@
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACEID,
+  accessToken: process.env.CONTENTFUL_D_ACCESS_TOKEN,
+}
+
 module.exports = {
   siteMetadata: {
     title: `exe blog`,
@@ -31,6 +36,10 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
       'gatsby-plugin-antd',
       `gatsby-plugin-sass`,
       `gatsby-plugin-typescript`
