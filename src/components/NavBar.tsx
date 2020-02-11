@@ -5,31 +5,35 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 const { Header, Content } = Layout
 const { Text } = Typography
 
-const logoQuery = graphql`
+export const LogoQuery = graphql`
   query{
     file(relativePath: {eq:"exe-blog-x.png"}) {
       publicURL
     }
   }
 `
+
+export interface INode {
+
+}
 interface Props {
-  location?: any
+  location?: any;
 }
 const NavBar: FC<Props> = ({ location }) => {
   const {
     file: { publicURL },
-  } = useStaticQuery(logoQuery)
+  } = useStaticQuery(LogoQuery)
   console.log("relativePath", publicURL)
   const logoFixed = publicURL;
   return (
     <Affix offsetTop={0}>
-      <Row type="flex" justify="end">
+      <Row type="flex">
         <Header className="header" style={{ backgroundColor: "transparent" }}>
           <Col span={12} offset={1}>
             <a><img style={{ width: '120px', height: '100px' }} src={`${logoFixed}`} /></a>
           </Col>
           <Row type="flex" justify="end">
-            <Col sm={23} xs={10} lg={18}>
+            <Col sm={23} xs={10} lg={24}>
               <Menu
                 className="nav"
                 theme="light"
