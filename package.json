@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kyle Mathews <sirawit0676@gmail.com>",
   "dependencies": {
     "antd": "^3.26.7",
     "gatsby": "^2.18.12",
@@ -15,6 +15,7 @@
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-typescript": "^2.1.26",
+    "gatsby-source-contentful": "^2.1.85",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.7",
     "node-sass": "^4.13.1",
