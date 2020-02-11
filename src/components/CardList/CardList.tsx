@@ -3,21 +3,28 @@ import { Row, Col } from "antd"
 import CardContent from "./CartContent"
 import CardThumb from "./CardTrumbnail"
 import "../../sass/cardList.scss"
+import { useStaticQuery, graphql } from "gatsby"
+import Item from "antd/lib/list/Item"
+import CardVid from "./CardWithVideo"
 
 interface Props {
-  withVid?:boolean
+  withVid?: boolean
+  data?: object
 }
-const CardList: FC<Props> = ({withVid}) => {
+
+const CardList: FC<Props> = ({ withVid, data }) => {
+  // console.log('data', data.name)
   return (
     <Row type="flex" justify="space-around">
-      <div className={`exe-blog-item  ${withVid && 'blog-item-video'}`}>
+      <div className={`exe-blog-item`}>
         {" "}
-        <Col span={12}>
-          <CardContent />
+        <Col span={24}>
+          {/* <CardVid /> */}
+          <CardContent name={data?.name} description={data?.description} date={data?.start} image={data?.images} />
         </Col>
-        <Col span={10}>
-          <CardThumb withVid={withVid} />
-        </Col>
+        {/* <Col span={10}>
+          <CardThumb withVid={withVid} image={data?.images} />
+        </Col> */}
       </div>
     </Row>
   )
