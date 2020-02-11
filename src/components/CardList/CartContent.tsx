@@ -1,56 +1,42 @@
-import React from "react"
-import { Icon, Row, Col } from "antd"
-import ReadMoreArrow from "../../images/custom-icons/readmore-arrow.png"
-import ReadMoreArrowBack from "../../images/custom-icons/readmore-arrow-black.png"
-const CardContent = () => {
+import React, { FC, useEffect, useState } from "react"
+import { Row, Col } from "antd"
+
+
+interface Props {
+  name?: string
+  description?: string
+  date?: string
+  image?: any
+}
+const CardContent: FC<Props> = ({ name, description, date, image }) => {
+  const [images, setImages] = useState(undefined)
+  useEffect(() => {
+    setImages(image)
+  }, [image])
   return (
     <>
-      <Row>
+      <Row type="flex">
         <Col>
-          <div className="blog-item-content">
-            <Col span={24}>
-              <h6 className="blog-item-date">
-                <span className="date">10</span> th{" "}
-                <span className="month">March</span>
-              </h6>
-            </Col>
-            <Col span={24}>
-              <h4 className="blog-item-title">
-                <a href="blog-details.html">
-                  How To Install Flutter
-                </a>
-              </h4>
-            </Col>
-            <Col>
-              <div className="post-tag-container">
-                <a className="post-tag">
-                  # dart
-              </a>
+          <div className="blog-slider">
+            <div className="blog-slider__wrp swiper-wrapper">
+              <div className="blog-slider__item swiper-slide">
 
-                <a className="post-tag">
-                  # flutter
-              </a>
-                <a className="post-tag">
-                  # cross-platform
-              </a>
+                <Col>
+                  <div className="blog-slider__img">
+                    {
+                      images?.map((m: any) => <img src={`https://${m?.file.url}`} alt="" />)
+                    }
+                  </div>
+                </Col>
+                <div className="blog-slider__content">
+                  <span className="blog-slider__code">{date}</span>
+                  <div className="blog-slider__title">{name}</div>
+                  <div className="blog-slider__text crop">{description?.description}</div>
+                  <a href="#" className="blog-slider__button">READ MORE</a>
+                </div>
               </div>
-            </Col>
-            {/* <div className="blog-item-share">
-              <Col span={24}>
-                <button className="blog-item-share-toggle">
-                  <Icon type="share-alt" style={{ fontSize: '20px', marginRight: '1px' }} /> <p>Shared</p>
-                </button>
-              </Col>
-            </div> */}
-            <Col span={24}>
-              <a href="blog-details.html" className="exe-readmore">
-                Read More
-                <span>
-                  <img src={ReadMoreArrowBack} alt="Readmore Arrow" />
-                  <img src={ReadMoreArrow} alt="Readmore Arrow" />
-                </span>
-              </a>
-            </Col>
+            </div>
+            <div className="blog-slider__pagination"></div>
           </div>
         </Col>
       </Row>
