@@ -46,7 +46,7 @@ const IndexPage: FC<Props> = ({ location }) => {
   console.log('gg', data)
   return (
     <Layouts>
-      <Row type="flex" justify="center" style={{ backgroundColor: "#f6f6f6" }}>
+      <Row type="flex" justify="center">
         <Col span={24}>
           <Content>
             <HeaderText text="Welcome To My Home" />
@@ -55,11 +55,8 @@ const IndexPage: FC<Props> = ({ location }) => {
         <SubList />
       </Row>
       <Row type="flex" justify="space-around">
-
         {data.map((item: any) => (
-          <Col>
-            <CardList data={item} key={item.id} />
-          </Col>
+          <CardList data={item} key={item.id} />
         ))}
       </Row>
     </Layouts>
