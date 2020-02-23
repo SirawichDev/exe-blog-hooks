@@ -18,6 +18,9 @@ query{
         id
         name
         start
+        tags{
+          tags
+        }
         images {
           id
           file {
@@ -51,14 +54,13 @@ const IndexPage: FC<Props> = ({ location }) => {
         </Col>
         <SubList />
       </Row>
-      <Row type="flex" gutter={2} justify="space-around">
+      <Row type="flex" justify="space-around">
 
         {data.map((item: any) => (
-          <Col offset={1}>
+          <Col>
             <CardList data={item} key={item.id} />
           </Col>
         ))}
-        <CardAudio />
       </Row>
     </Layouts>
   )
