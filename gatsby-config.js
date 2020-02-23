@@ -1,6 +1,8 @@
+
+require('dotenv').config()
 const contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACEID,
-  accessToken: process.env.CONTENTFUL_D_ACCESS_TOKEN,
+  spaceId: process.env.SPACE_ID,
+  accessToken: process.env.ACCESS_TOKEN,
 }
 
 module.exports = {
