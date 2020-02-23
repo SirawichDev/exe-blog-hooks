@@ -23,11 +23,11 @@ jobs:
           npm test
         env:
           CI: true
-          SPACE_ID: ${{secret.SPACE_ID}}
-          ACCESS_TOKEN: ${{secret.ACCESS_TOKEN}}
+          SPACE_ID: ${{ secret.SPACE_ID }}
+          ACCESS_TOKEN: ${{ secret.ACCESS_TOKEN }}
       - name: Upload coverage to Codecov
         uses: ./
         with:
-          token: ${{secrets.CODECOV_TOKEN}}
+          token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittest
           name: codecov-1
