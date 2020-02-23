@@ -23,8 +23,8 @@ jobs:
           npm test
         env:
           CI: true
-          SPACE_ID: ${{ secret.SPACE_ID }}
-          ACCESS_TOKEN: ${{ secret.ACCESS_TOKEN }}
+          SPACE_ID: ${{ secrets.SPACE_ID }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Upload coverage to Codecov
         uses: ./
         with:
