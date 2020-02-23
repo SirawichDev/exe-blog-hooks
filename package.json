@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <sirawit0676@gmail.com>",
+  "author": "sirawich vougnchuy <sirawit0676@gmail.com>",
   "dependencies": {
     "antd": "^3.26.7",
     "gatsby": "^2.18.12",

@@ -15,16 +15,12 @@ interface Props {
 const CardList: FC<Props> = ({ withVid, data }) => {
   // console.log('data', data.name)
   return (
-    <Row type="flex" justify="space-around">
+    <Row type="flex" justify="space-between">
       <div className={`exe-blog-item`}>
         {" "}
         <Col span={24}>
-          {/* <CardVid /> */}
           <CardContent name={data?.name} description={data?.description} date={data?.start} image={data?.images} />
         </Col>
-        {/* <Col span={10}>
-          <CardThumb withVid={withVid} image={data?.images} />
-        </Col> */}
       </div>
     </Row>
   )

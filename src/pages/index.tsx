@@ -54,7 +54,9 @@ const IndexPage: FC<Props> = ({ location }) => {
       <Row type="flex" gutter={2} justify="space-around">
 
         {data.map((item: any) => (
-          <CardList data={item} key={item.id} />
+          <Col offset={1}>
+            <CardList data={item} key={item.id} />
+          </Col>
         ))}
         <CardAudio />
       </Row>
