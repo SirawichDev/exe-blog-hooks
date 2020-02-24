@@ -2,7 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es5",
     "baseUrl": "./src/",
     "jsx": "preserve",
     "lib": ["dom", "esnext"],

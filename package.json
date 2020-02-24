@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
+    "codecov": "^3.6.5",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",
@@ -44,7 +45,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest --config jestconfig.json"
   },
   "repository": {
     "type": "git",
