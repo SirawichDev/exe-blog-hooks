@@ -1,10 +1,12 @@
 {
-    "extends": ["tslint-react"],
-    "rules": {
-      "prettier": true,  "moduleResolution": "node",
-      "jsx-no-multiline-js": false,
-      "jsx-no-lambda": false,
-      "import-name": false,
-      "no-boolean-literal-compare": false
-    }
+  "extends": ["tslint-react", "tslint-eslint-rules"],
+  "rules": {
+    "prettier": true,
+    "moduleResolution": "node",
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "import-name": false,
+    "no-constant-condition": true,
+    "no-boolean-literal-compare": false
   }
+}

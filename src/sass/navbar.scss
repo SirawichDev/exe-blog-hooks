@@ -5,7 +5,7 @@ $toggle: ($size + $margin*2) * 1.5;
 
 .header {
     position: absolute;
-    background-color: transparent;
+    background-color: white !important;
     z-index: 99;
     min-width: 100vw;
   
@@ -29,6 +29,12 @@ $toggle: ($size + $margin*2) * 1.5;
         font-size: 34px;
     }
 }
-.nav-transparent{
-    background-color: transparent;
+
+.nav{
+    border-bottom: none !important;
+    // background-color: red;
+
+    & > a {
+        border-bottom: none !important;
+    }
 }

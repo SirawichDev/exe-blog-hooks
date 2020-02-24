@@ -1,17 +1,28 @@
 {
-    "compilerOptions": {     
-      "moduleResolution": "node",
-      "module": "commonjs",
-      "target": "esnext",
-      "jsx": "preserve",
-      "lib": ["dom", "esnext"],
-      "strict": true,
-      "noEmit": true,
-      "isolatedModules": true,
-      "esModuleInterop": true,
-      "allowJs": true,
-      "sourceMap": true
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "public", ".cache","**/*.spec.ts"]
-  }
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es5",
+    "baseUrl": "./src/",
+    "jsx": "preserve",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "noEmit": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache",
+    "**/*.spec.ts",
+    "./.cache",
+    "./gatsby-config.ts",
+    "./gatsby-node.ts",
+    "./gatsby-browser.ts",
+    "./gatsby-ssr.ts"
+  ]
+}

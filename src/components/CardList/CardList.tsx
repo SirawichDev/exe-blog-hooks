@@ -1,25 +1,45 @@
 import React, { FC } from "react"
-import { Row, Col } from "antd"
+import { Row, Col, Card } from "antd"
 import CardContent from "./CartContent"
 import CardThumb from "./CardTrumbnail"
-import "../../sass/cardList.scss"
+import { useStaticQuery, graphql } from "gatsby"
+import Item from "antd/lib/list/Item"
+import CardVid from "./CardWithVideo"
 
 interface Props {
-  withVid?:boolean
+  withVid?: boolean
+  data?: object
 }
-const CardList: FC<Props> = ({withVid}) => {
+
+const { Meta } = Card
+
+const CardList: FC<Props> = ({ withVid, data }) => {
+  const { tags } = data.tags;
+  const date: String = String(new Date(data?.start))
   return (
-    <Row type="flex" justify="space-around">
-      <div className={`exe-blog-item  ${withVid && 'blog-item-video'}`}>
-        {" "}
-        <Col span={12}>
-          <CardContent />
-        </Col>
-        <Col span={10}>
-          <CardThumb withVid={withVid} />
-        </Col>
-      </div>
-    </Row>
+
+
+    <Col span={11}>
+      <Card
+        hoverable
+        style={{ border: 'none' }}
+        cover={data?.images.map((m: any) => (<img className="xImg" src={`https://${m?.file.url}`} />))}
+      >
+        <div className="post-date">
+          {date.split(" ")[2]}
+          <span>
+            {date.split(" ")[1]}
+          </span>
+        </div>
+        <Row type="flex" justify="start" >
+          {tags.map(tag => <p className="post-tag">#{tag}</p>)}
+        </Row>
+        <h2 className="post-title">{data?.name}</h2>
+        <p className="meta">{data?.description.description}</p>
+      </Card>
+    </Col>
+
+
   )
 }
 

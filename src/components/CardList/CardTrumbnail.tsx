@@ -12,12 +12,13 @@ const playIconQuery = graphql`
 `
 interface Props {
   withVid?: boolean
+  image?: Array<object>
 }
-const CardThumb: FC<Props> = ({ withVid }) => {
+const CardThumb: FC<Props> = ({ withVid, image }) => {
   const {
     file: { publicURL },
   } = useStaticQuery(playIconQuery)
-
+  // console.log('image', image?.map(m => console.log('hh', m.file)))
   const [isVisible, setVisible] = useState(false)
   const showModal = () => {
     setVisible(true)
@@ -30,7 +31,10 @@ const CardThumb: FC<Props> = ({ withVid }) => {
       <Col>
         <div className="blog-item-thumb">
           <a>
-            <img  src={Rabbit} alt="blog thumb" />
+            {image?.map((m: any) => (
+              <img key={m.id} src={m.file.url} alt="blog thumb" />
+            ))
+            }
             {withVid && (
               <a
                 onClick={showModal}
@@ -38,7 +42,7 @@ const CardThumb: FC<Props> = ({ withVid }) => {
                 data-video-id="YB4AvOsgL9o"
               >
                 <span>
-                  <img style={{width: "30px"}} src={publicURL} alt="play icon" />
+                  <img style={{ width: "30px" }} src={publicURL} alt="play icon" />
                 </span>
               </a>
             )}
@@ -54,7 +58,7 @@ const CardThumb: FC<Props> = ({ withVid }) => {
               width="100%"
               height="300"
               scrolling="no"
-              frameborder="no"
+              frameBorder="no"
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/263796665&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
             ></iframe>
