@@ -17,9 +17,7 @@ const CardList: FC<Props> = ({ withVid, data }) => {
   const { tags } = data.tags;
   const date: String = String(new Date(data?.start))
   return (
-
-
-    <Col span={11}>
+    <Col xs={20} sm={20} md={10} lg={10}>
       <Card
         hoverable
         style={{ border: 'none' }}
@@ -27,7 +25,7 @@ const CardList: FC<Props> = ({ withVid, data }) => {
       >
         <div className="post-date">
           {date.split(" ")[2]}
-          <span>
+          <span className="month">
             {date.split(" ")[1]}
           </span>
         </div>
@@ -38,6 +36,7 @@ const CardList: FC<Props> = ({ withVid, data }) => {
         <p className="meta">{data?.description.description}</p>
       </Card>
     </Col>
+
 
 
   )
