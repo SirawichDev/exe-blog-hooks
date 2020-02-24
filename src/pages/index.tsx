@@ -43,7 +43,7 @@ type Props = {
 const IndexPage: FC<Props> = ({ location }) => {
   const { allContentfulDevTour: { edges } } = useStaticQuery(PostListQuery)
   const data = edges.map((item: any) => item.node)
-  console.log('gg', data)
+
   return (
     <Layouts>
       <Row type="flex" justify="center">
