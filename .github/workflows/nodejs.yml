@@ -26,9 +26,7 @@ jobs:
           SPACE_ID: ${{ secrets.SPACE_ID }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Upload coverage to Codecov
-        uses: ./
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          flags: unittest
-          name: codecov-1
-          file: ./coverage/lcov.info
+        run: |
+          npm install -g codecov
+          codecov -t ${{ secrets.CODECOV_TOKEN }}
+
