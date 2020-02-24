@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ${{matrix.os}}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
@@ -31,3 +31,4 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittest
           name: codecov-1
+          file: ./coverage/lcov.info
