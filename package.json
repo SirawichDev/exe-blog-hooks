@@ -5,9 +5,7 @@
   "version": "0.1.0",
   "author": "sirawich vougnchuy <sirawit0676@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.8.4",
     "antd": "^3.26.7",
-    "babel-preset-gatsby-package": "^0.2.16",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -28,10 +26,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.8.4",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
-    "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",

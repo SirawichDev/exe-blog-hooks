@@ -1,4 +1,4 @@
-import { isInternalLink } from './main'
+const isInternalLink = (link:string) => /^\/(?!\/)/.test(link)
 
 test('should return false given external link', () => {
   expect(isInternalLink('https://google.com')).toBe(false)
