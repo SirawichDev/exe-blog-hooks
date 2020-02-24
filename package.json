@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "author": "sirawich vougnchuy <sirawit0676@gmail.com>",
   "dependencies": {
+    "@babel/core": "^7.8.4",
     "antd": "^3.26.7",
+    "babel-preset-gatsby-package": "^0.2.16",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
