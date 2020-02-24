@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layouts from "../components/Layout/layout"
 import "../sass/index.scss"
@@ -10,13 +10,43 @@ import CardList from "../components/CardList"
 import HeaderText from "../components/HeaderText"
 import CardAudio from "../components/CardList/CardAudio"
 
+const PostListQuery = graphql`
+query{
+  allContentfulDevTour{
+    edges{
+      node{
+        id
+        name
+        start
+        tags{
+          tags
+        }
+        images {
+          id
+          file {
+            url
+          }
+        }
+        description{
+          description
+        }
+      }
+    }
+  }
+}
+
+`
+
 type Props = {
   location?: any
 }
 const IndexPage: FC<Props> = ({ location }) => {
+  const { allContentfulDevTour: { edges } } = useStaticQuery(PostListQuery)
+  const data = edges.map((item: any) => item.node)
+
   return (
     <Layouts>
-      <Row type="flex" justify="center" style={{ backgroundColor: "#f6f6f6" }}>
+      <Row type="flex" justify="center">
         <Col span={24}>
           <Content>
             <HeaderText text="Welcome To My Home" />
@@ -24,10 +54,10 @@ const IndexPage: FC<Props> = ({ location }) => {
         </Col>
         <SubList />
       </Row>
-      <Row type="flex" gutter={2} justify="space-around">
-        <CardList />
-        <CardAudio/>
-        <CardList withVid/>
+      <Row type="flex" justify="space-around">
+        {data.map((item: any) => (
+          <CardList data={item} key={item.id} />
+        ))}
       </Row>
     </Layouts>
   )
