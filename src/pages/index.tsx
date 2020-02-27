@@ -16,11 +16,12 @@ query{
     edges{
       node{
         id
-        name
+        title
         start
         tags{
           tags
         }
+        slug
         images {
           id
           file {
@@ -43,6 +44,7 @@ type Props = {
 const IndexPage: FC<Props> = ({ location }) => {
   const { allContentfulDevTour: { edges } } = useStaticQuery(PostListQuery)
   const data = edges.map((item: any) => item.node)
+  console.log('data',data)
 
   return (
     <Layouts>
