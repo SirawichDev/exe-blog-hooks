@@ -5,7 +5,6 @@ import { Layout, Menu, Breadcrumb, Icon, Col, Row } from "antd"
 import Navbar from "../NavBar"
 import Footer from "../Footer"
 
-import "./layout.scss"
 const { Content } = Layout
 
 interface Prop {
