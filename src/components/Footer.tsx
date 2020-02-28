@@ -26,7 +26,7 @@ const Footers = () => {
       <Row type="flex" justify="center">
         <Col> Created By {siteMetadata.author}</Col>
       </Row>
-      <Row type="flex" justify="center" style={{ marginTop: "20px" }}>
+      <Row type="flex" justify="center" style={{ marginTop: "5px" }}>
         <Col span={2}>
           {" "}
           <a href="https://github.com/SirawichDev">
