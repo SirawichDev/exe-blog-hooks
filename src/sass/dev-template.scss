@@ -1,0 +1,115 @@
+.dev-template-img{
+    width: 100%;
+    object-fit: cover;
+    object-fit: contain;
+    -webkit-font-smoothing: antialiased;
+    object-position: center;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  border-left: 0.25em solid #f99;
+}
+.gatsby-highlight {
+  // background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  font-family: "Montserrat" !important;
+  padding: 1em;
+  position: relative;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  // background-color: transparent;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+  border-radius: 7px;
+
+  &::before {
+    color: #232129;
+    font-size: 0.75rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    letter-spacing: 0.075em;
+    line-height: 1.5;
+    position: absolute;
+    left: .2rem;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0px;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.gatsby-highlight pre[class="language-css"]::before {
+  content: "css";
+  color: #ffffff;
+  background: rgb(255, 152, 0);
+}
+.gatsby-highlight pre[class="language-javascript"]::before {
+  content: "js";
+  background: rgb(247, 223, 30);
+}
+.gatsby-highlight pre[class="language-js"]::before {
+  content: "js";
+  background: rgb(247, 223, 30);
+}
+.gatsby-highlight pre[class="language-shell"]::before {
+  content: "shell";
+  background: rgb(90, 231, 62);
+}
+.gatsby-highlight pre[class="language-text"]::before {
+  content: "text";
+  color: white;
+  background: gray;
+}
+pre {
+  display: block;
+  white-space: pre;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.42;
+  background: hsla(0, 0%, 0%, 0.04);
+  border-radius: 3px;
+  overflow: auto;
+  word-wrap: normal;
+  padding: 1.5rem;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}
+.command-line-prompt > span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}
