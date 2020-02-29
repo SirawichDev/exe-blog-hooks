@@ -1,12 +1,12 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Poppins&display=swap');
-@import './variables';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Roboto|Poppins|Montserrat&display=swap');
 @import './navbar.scss';
 @import './footer.scss';
 @import './cardList.scss';
+@import "./dev-template.scss";
 
-* {
-    font-family: 'Fira Sans', sans-serif;
-// font-family: 'Krub', sans-serif;
+@font-face{
+    font-family: 'JetBrainsMono-Regular';
+    src: url('../assets/fonts/JetBrainsMono-Regular.ttf');
 }
