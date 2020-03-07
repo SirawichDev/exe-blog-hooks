@@ -5,7 +5,8 @@
 @import './footer.scss';
 @import './cardList.scss';
 @import "./dev-template.scss";
-
+@import "./sidebar.scss";
+html, body {margin: 0; height: 100%; overflow-x: hidden;}
 @font-face{
     font-family: 'JetBrainsMono-Regular';
     src: url('../assets/fonts/JetBrainsMono-Regular.ttf');

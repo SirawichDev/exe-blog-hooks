@@ -2,9 +2,10 @@ import React, { FC } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout/layout"
 import { Row, Col, Typography } from "antd"
+import SideBar from "../components/SideBar"
 
 const { Text } = Typography
-const DevTemplate: FC<Props> = ({ data }) => {
+const DevTemplate = ({ data }) => {
   const {
     title,
     description: { description, childMarkdownRemark },
@@ -14,28 +15,36 @@ const DevTemplate: FC<Props> = ({ data }) => {
     images,
   } = data.dev
   const [mainImage, ...devImages] = images
-  const date: String = String(new Date(start))
-  console.log('date',date.split(" ")[0])
-  console.log('date',date.split(" ")[1])
+  console.log('tt',tags)
   return (
     <Layout>
-      <Row type="flex" justify="center">
-        <Col span={20} style={{ marginTop: "4rem" }} mt>
-          <Row type="flex" justify="start">
-            <Text strong style={{ fontSize: "20px" }}>
-              {title}
-            </Text>
+      <Row type="flex" justify="space-between">
+        <Col span={24}>
+          <Col span={18} style={{ marginTop: "4rem" }}>
+            <Row type="flex">
+              <Col style={{ margin: "3rem" }}>
+                <Text strong style={{ fontSize: "20px" }}>
+                  {title}
+                </Text>
+                <br />
+                <Text style={{ fontSize: "15px" }}>{start}</Text>
+              </Col>
+            </Row>
+            
+            <img className="dev-template-img" src={mainImage.fluid.src} />
+            <div
+              style={{ margin: "3rem" }}
+              dangerouslySetInnerHTML={{
+                __html: childMarkdownRemark.html,
+              }}
+            />
+          </Col>
+          <Row type="flex" className="container">
+            <SideBar title="Latest Post" />
           </Row>
-          <Row type="flex" justify="start">
-            <Text style={{ fontSize: "15px" }}>{date}</Text>
+          <Row type="flex" className="container">
+            <SideBar tags={tags} title="Tags" />
           </Row>
-          <img className="dev-template-img" src={mainImage.fluid.src} />
-          <div
-            style={{ margin: "3rem" }}
-            dangerouslySetInnerHTML={{
-              __html: childMarkdownRemark.html,
-            }}
-          />
         </Col>
       </Row>
     </Layout>
@@ -56,7 +65,7 @@ export const query = graphql`
           html
         }
       }
-      start
+      start(formatString: "D MMMM ,YYYY")
       images {
         fluid {
           src

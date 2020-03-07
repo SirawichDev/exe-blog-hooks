@@ -6,31 +6,33 @@ const { Header, Content } = Layout
 const { Text } = Typography
 
 export const LogoQuery = graphql`
-  query{
-    file(relativePath: {eq:"exe-blog-x.png"}) {
+  query {
+    file(relativePath: { eq: "exe-blog-x.png" }) {
       publicURL
     }
   }
 `
 
-export interface INode {
-
-}
+export interface INode {}
 interface Props {
-  location?: any;
+  location?: any
 }
 const NavBar: FC<Props> = ({ location }) => {
   const {
     file: { publicURL },
   } = useStaticQuery(LogoQuery)
-  console.log("relativePath", publicURL)
-  const logoFixed = publicURL;
+  const logoFixed = publicURL
   return (
     <Affix offsetTop={0}>
       <Row type="flex">
         <Header className="header" style={{ backgroundColor: "transparent" }}>
           <Col span={12} offset={1}>
-            <a><img style={{ width: '120px', height: '100px' }} src={`${logoFixed}`} /></a>
+            <Link state={{ pathName: "home" }} to="/">
+              <img
+                style={{ width: "100px", height: "85px" }}
+                src={`${logoFixed}`}
+              />{" "}
+            </Link>
           </Col>
           <Row type="flex" justify="end">
             <Col sm={23} xs={10} lg={24}>
@@ -57,13 +59,13 @@ const NavBar: FC<Props> = ({ location }) => {
                   <Link to="/lifestyle" state={{ pathName: "life_style" }}>
                     <Icon type="sync" spin />
                     Lift Style
-                </Link>
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="3">
                   <Link to="/contact">
                     <Icon type="phone" />
                     Contact
-                </Link>
+                  </Link>
                 </Menu.Item>
               </Menu>
             </Col>
