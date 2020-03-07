@@ -1,9 +1,9 @@
-.dev-template-img{
-    width: 100%;
-    object-fit: cover;
-    object-fit: contain;
-    -webkit-font-smoothing: antialiased;
-    object-position: center;
+.dev-template-img {
+  width: 100%;
+  object-fit: cover;
+  object-fit: contain;
+  -webkit-font-smoothing: antialiased;
+  object-position: center;
 }
 
 .gatsby-highlight-code-line {
@@ -15,7 +15,7 @@
   // background-color: #fdf6e3;
   border-radius: 0.3em;
   margin: 0.5em 0;
-  font-family: "Montserrat" !important;
+  // font-family: "Montserrat" !important;
   padding: 1em;
   position: relative;
   overflow: auto;
@@ -31,14 +31,14 @@
   border-radius: 7px;
 
   &::before {
-    color: #232129;
+    color: rgb(255, 255, 255);
     font-size: 0.75rem;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     letter-spacing: 0.075em;
     line-height: 1.5;
     position: absolute;
-    left: .2rem;
+    left: 0.5rem;
     text-align: right;
     text-transform: uppercase;
     top: 0px;
@@ -47,26 +47,38 @@
   }
 }
 
+span .token {
+  font-size: 15px;
+}
+
 .gatsby-highlight pre[class="language-css"]::before {
   content: "css";
-  color: #ffffff;
+
+  color: black !important;
   background: rgb(255, 152, 0);
 }
 .gatsby-highlight pre[class="language-javascript"]::before {
   content: "js";
   background: rgb(247, 223, 30);
 }
+
+.gatsby-highlight pre[class="language-html"]::before {
+  content: "html";
+  background: rgb(247, 30, 66);
+}
 .gatsby-highlight pre[class="language-js"]::before {
   content: "js";
+
   background: rgb(247, 223, 30);
 }
 .gatsby-highlight pre[class="language-shell"]::before {
   content: "shell";
+  color: black !important;
   background: rgb(90, 231, 62);
 }
 .gatsby-highlight pre[class="language-text"]::before {
   content: "text";
-  color: white;
+
   background: gray;
 }
 pre {
