@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, ReactElement } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layouts from "../components/Layout/layout"
@@ -10,41 +10,60 @@ import CardList from "../components/CardList"
 import HeaderText from "../components/HeaderText"
 import CardAudio from "../components/CardList/CardAudio"
 
-const PostListQuery = graphql`
-query{
-  allContentfulDevTour{
-    edges{
-      node{
-        id
-        title
-        start
-        tags{
-          tags
+type IndexProp = {
+  allContentfulDevTour: {
+    edges: {
+      node: {
+        id: number
+        title: string
+        start: string
+        tags: {
+          tags: string[]
         }
-        slug
-        images {
-          id
-          file {
-            url
+        slug: string
+        images: {
+          id: number
+          file: {
+            url: string
           }
         }
-        description{
-          description
+        description: {
+          description: string
         }
       }
     }
   }
 }
 
-`
-
-type Props = {
-  location?: any
-}
-const IndexPage: FC<Props> = ({ location }) => {
-  const { allContentfulDevTour: { edges } } = useStaticQuery(PostListQuery)
-  const data = edges.map((item: any) => item.node)
-  console.log('data',data)
+const IndexPage = () => {
+  const PostListQuery = useStaticQuery<IndexProp>(graphql`
+    query {
+      allContentfulDevTour {
+        edges {
+          node {
+            id
+            title
+            start
+            tags {
+              tags
+            }
+            slug
+            images {
+              id
+              file {
+                url
+              }
+            }
+            description {
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+ 
+  const data = PostListQuery.allContentfulDevTour.edges.map((head: any) => head.node )
 
   return (
     <Layouts>
