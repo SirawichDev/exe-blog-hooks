@@ -20,9 +20,9 @@ const DevTemplate = ({ data }) => {
     <Layout>
       <Row type="flex" justify="space-between">
         <Col span={24}>
-          <Col span={18} style={{ marginTop: "4rem" }}>
+          <Col  span={18} style={{ marginTop: "4rem", padding: "4.5rem" }}>
             <Row type="flex">
-              <Col style={{ margin: "3rem" }}>
+              <Col style={{ paddingTop: "2rem" }}>
                 <Text strong style={{ fontSize: "20px" }}>
                   {title}
                 </Text>
@@ -33,7 +33,7 @@ const DevTemplate = ({ data }) => {
             
             <img className="dev-template-img" src={mainImage.fluid.src} />
             <div
-              style={{ margin: "3rem" }}
+              style={{fontSize: '16px'}}
               dangerouslySetInnerHTML={{
                 __html: childMarkdownRemark.html,
               }}
