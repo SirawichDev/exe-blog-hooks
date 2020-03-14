@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-
+import Col from 'antd/es/col'
 type Props = {
   tags?: string[]
   title: string
