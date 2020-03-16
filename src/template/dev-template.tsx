@@ -23,7 +23,7 @@ const DevTemplate = ({ data }) => {
     <Layout>
       <Row type="flex" justify="space-between">
         <Col xs={24}>
-          <Col style={{ marginTop: "4rem", padding: `${width <= 425 ? '.5rem' : '4.5rem'}` }}>
+          <Col xs={24} md={16} style={{ marginTop: "4rem", padding: `${width <= 425 ? '.5rem' : '4.5rem'}` }}>
             <Row type="flex">
               <Col style={{ paddingTop: "2rem" }}>
                 <Text strong style={{ fontSize: "20px" }}>
@@ -44,7 +44,8 @@ const DevTemplate = ({ data }) => {
               />
             </Col>
           </Col>
-          <Col sm={0}>
+
+          <Col xs={24} sm={2} md={8}>
             <Row type="flex" className="container">
               <SideBar title="Latest Post" />
             </Row>
