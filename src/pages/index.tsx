@@ -83,9 +83,6 @@ const IndexPage = () => {
       setfilteredData(data.filter((dt: any) => dt.blogtype.type === typeBlog))
     } else setfilteredData(data)
   }, [typeBlog])
-  useEffect(() => {
-    console.log("v", filteredData)
-  }, [filteredData])
   return (
     <Layouts>
       <Row type="flex" justify="center">
