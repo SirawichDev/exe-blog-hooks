@@ -1,13 +1,25 @@
-import React, { useEffect, useState, MouseEvent } from "react"
+import React, { useEffect, useState, FC, Props } from "react"
 import { Col, Row, Radio, Button } from "antd"
 import Text from "antd/lib/typography/Text"
 import "../sass/sublist.scss"
 
-const SubList = () => {
+type SubListProps = { filterType: (b:string) => void }
+const SubList: FC<SubListProps> = ({ filterType }) => {
   const [id, setId] = useState("1")
 
   const ToggleSetting = (id: string) => {
     setId(id)
+    switch (id) {
+      case "1":
+        filterType("ALL")
+        break
+      case "2":
+        filterType("blog")
+        break
+      case "3":
+        filterType("lifestyle")
+        break
+    }
   }
 
   return (
