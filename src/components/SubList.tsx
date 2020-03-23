@@ -1,6 +1,5 @@
 import React, { useEffect, useState, FC, Props } from "react"
-import { Col, Row, Radio, Button } from "antd"
-import Text from "antd/lib/typography/Text"
+import { Col, Row, Button } from "antd"
 import "../sass/sublist.scss"
 
 type SubListProps = { filterType: (b:string) => void }
@@ -21,6 +20,9 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
         break
     }
   }
+  useEffect(() => {
+    filterType("ALL")
+  },[])
 
   return (
     <Row
