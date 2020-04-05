@@ -4,7 +4,11 @@ export type PostDTO = {
     start: string;
     images: string[];
     slug: string;
-    description: string | null;
-    tags: object;
+    description: {
+        description: string
+    }
+    tags: {
+        tags: Array<string>
+    }
 }
 

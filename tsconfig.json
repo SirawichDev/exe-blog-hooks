@@ -7,11 +7,11 @@
     "jsx": "preserve",
     "lib": ["dom", "esnext"],
     "strict": true,
-    "noEmit": true,
     "isolatedModules": false,
     "esModuleInterop": true,
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["cypress"]
   },
   "include": ["src/**/*"],
   "exclude": [

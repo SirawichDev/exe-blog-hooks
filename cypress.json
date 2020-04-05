@@ -1,0 +1,5 @@
+{
+  "integrationFolder": "cypress/e2e",
+  "watchForFileChanges": true,
+  "projectId": "41nj4d"
+}
