@@ -32,12 +32,17 @@
   },
   "devDependencies": {
     "@bahmutov/add-typescript-to-cypress": "^2.1.2",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
     "codecov": "^3.6.5",
     "cypress": "^4.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "gatsby-remark-code-titles": "^1.1.0",
-    "jest": "^25.1.0",
+    "jest": "^25.2.7",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",
     "tslint": "^6.1.1",
@@ -57,7 +62,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "cytest": "cypress open",
-    "test": "jest --config jest.config.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
