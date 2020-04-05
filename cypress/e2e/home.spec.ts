@@ -31,7 +31,7 @@ describe('Header', () => {
 
 
 const visitRootPage = () => {
-  cy.visit("/")
+  cy.visit("http://localhost:8000/")
 }
 
 const rootEleGet = () => {
