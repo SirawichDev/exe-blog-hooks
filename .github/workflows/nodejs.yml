@@ -38,6 +38,7 @@ jobs:
           record: true
           parallel: true
           group: 'Actions EXE'
+          start: npm run develop
         env:
            CI: true
            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
