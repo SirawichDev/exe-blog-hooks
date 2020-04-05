@@ -34,10 +34,11 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: exe-cypress-test
         uses: cypress-io/github-action@v1
+        timeout-minutes: 10
         with:
           record: true
           parallel: true
-          group: 'Actions EXE'
+          group: Parallel 2x on ${{ matrix.os }}
           start: npm run develop
         env:
            CI: true
