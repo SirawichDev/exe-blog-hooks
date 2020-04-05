@@ -1,13 +1,17 @@
-import React, { FC } from "react"
+import React, { FC, DOMAttributes } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout/layout"
 import Col from "antd/es/col"
-import Row from 'antd/es/row'
-import Typography from 'antd/es/typography'
+import Row from "antd/es/row"
+import Typography from "antd/es/typography"
 import SideBar from "../components/SideBar"
-import { UseResolution } from '../utils/useResolutuon'
+import { UseResolution } from "../utils/useResolutuon"
 const { Text } = Typography
-const DevTemplate = ({ data }) => {
+
+type Props = {
+  data: any
+}
+const DevTemplate: FC<Props> = ({ data }) => {
   const {
     title,
     description: { description, childMarkdownRemark },
@@ -18,12 +22,19 @@ const DevTemplate = ({ data }) => {
   } = data.dev
   const [mainImage, ...devImages] = images
   const [width, height] = UseResolution()
-  console.log('www', width)
+  console.log("www", width)
   return (
     <Layout>
       <Row type="flex" justify="space-between">
         <Col xs={24}>
-          <Col xs={24} md={16} style={{ marginTop: "4rem", padding: `${width <= 425 ? '.5rem' : '4.5rem'}` }}>
+          <Col
+            xs={24}
+            md={16}
+            style={{
+              marginTop: "4rem",
+              padding: `${width <= 425 ? ".5rem" : "4.5rem"}`,
+            }}
+          >
             <Row type="flex">
               <Col style={{ paddingTop: "2rem" }}>
                 <Text strong style={{ fontSize: "20px" }}>
@@ -37,7 +48,7 @@ const DevTemplate = ({ data }) => {
             <img className="dev-template-img" src={mainImage.fluid.src} />
             <Col>
               <div
-                style={{ fontSize: '16px' }}
+                style={{ fontSize: "16px" }}
                 dangerouslySetInnerHTML={{
                   __html: childMarkdownRemark.html,
                 }}
@@ -55,7 +66,7 @@ const DevTemplate = ({ data }) => {
           </Col>
         </Col>
       </Row>
-    </Layout >
+    </Layout>
   )
 }
 
