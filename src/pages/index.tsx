@@ -5,6 +5,7 @@ import Layouts from "../components/Layout/layout"
 import "../sass/index.scss"
 import SubList from "../components/SubList"
 import { Row, Col, Layout } from "antd"
+
 const { Content } = Layout
 import CardList from "../components/CardList"
 import HeaderText from "../components/HeaderText"
@@ -40,47 +41,52 @@ type IndexProp = {
 
 const IndexPage = () => {
   const PostListQuery = useStaticQuery<IndexProp>(graphql`
-    query {
-      allContentfulDevTour {
-        edges {
-          node {
-            id
-            title
-            start
-            tags {
-              tags
-            }
-            blogtype {
-              type
-            }
-            slug
-            images {
-              id
-              file {
-                url
+      query {
+          allContentfulDevTour {
+              edges {
+                  node {
+                      id
+                      title
+                      start
+                      tags {
+                          tags
+                      }
+                      blogtype {
+                          type
+                      }
+                      slug
+                      images {
+                          id
+                          file {
+                              url
+                          }
+                      }
+                      description {
+                          description
+                      }
+                  }
               }
-            }
-            description {
-              description
-            }
           }
-        }
       }
-    }
   `)
 
-  let data = PostListQuery.allContentfulDevTour.edges.map(
-    (head: any) => head.node
-  )
+  let data =
+    PostListQuery.allContentfulDevTour.edges instanceof Array &&
+    PostListQuery.allContentfulDevTour.edges.map((head: any) => head.node)
 
   const [typeBlog, setTypeBlog] = useState<string>("")
-  const [filteredData, setfilteredData] = useState<Array<object>>(data)
+  const [filteredData, setfilteredData] = useState<Array<object> | boolean>(
+    data,
+  )
   const getTypeFromClick = (id: string) => {
     setTypeBlog(id)
   }
   useEffect(() => {
     if (typeBlog !== "ALL") {
-      setfilteredData(data.filter((dt: any) => dt.blogtype.type === typeBlog))
+      setfilteredData(
+        data instanceof Array &&
+        data.filter((dt: any) => dt.blogtype.type === typeBlog),
+      )
     } else setfilteredData(data)
   }, [typeBlog])
   return (
@@ -88,14 +94,15 @@ const IndexPage = () => {
       <Row type="flex" justify="center">
         <Col span={24}>
           <Content>
-            <HeaderText text="Welcome To My Home" />
+            <HeaderText data-cy="header" text="Welcome To My Home"/>
           </Content>
         </Col>
-        <SubList filterType={getTypeFromClick} />
+        <SubList filterType={getTypeFromClick}/>
       </Row>
       <Row type="flex" justify="space-around">
-        {filteredData.map((item: any) => (
-          <CardList data={item} key={item.id} />
+        {filteredData instanceof Array &&
+        filteredData.map((item: any) => (
+          <CardList data={item} key={item.id}/>
         ))}
       </Row>
     </Layouts>
