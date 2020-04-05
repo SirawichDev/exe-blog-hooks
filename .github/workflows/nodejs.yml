@@ -15,6 +15,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest]
         node-version: [12.x]
+        machines: [1,2]
 
     steps:
       - uses: actions/checkout@v1
@@ -31,9 +32,15 @@ jobs:
           CI: true
           SPACE_ID: ${{ secrets.SPACE_ID }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      - name: cypress-test
-        run: |
-          npm run cytest
+      - name: exe-cypress-test
+        uses: cypress-io/github-action@v1
+        with:
+          record: true
+          parallel: true
+          group: 'Actions EXE'
+        env:
+           CI: true
+           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Upload coverage to Codecov
         run: |
           npm install -g codecov
