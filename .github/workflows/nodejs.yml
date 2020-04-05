@@ -27,13 +27,13 @@ jobs:
           npm install
           npm run build --if-present
           npm test
-      - name: cypress-test
-        run: |
-          npm run cytest
         env:
           CI: true
           SPACE_ID: ${{ secrets.SPACE_ID }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: cypress-test
+        run: |
+          npm run cytest
       - name: Upload coverage to Codecov
         run: |
           npm install -g codecov
