@@ -1,7 +1,5 @@
 import React, { FC } from "react"
 import { Row, Col, Card } from "antd"
-import CardContent from "./CartContent"
-import CardThumb from "./CardTrumbnail"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import CardVid from "./CardWithVideo"
 import { PostDTO } from "shared/PostDTO"
@@ -11,8 +9,7 @@ interface Props {
   data: PostDTO
 }
 
-const CardList: FC<Props> = ({ withVid, data }) => {
-  const { tags } = data.tags
+const CardList: FC<Props> = ({ data }) => {
   const date: String = String(new Date(data?.start))
   return (
     <Col xs={20} sm={20} md={10} lg={10}>
@@ -29,7 +26,7 @@ const CardList: FC<Props> = ({ withVid, data }) => {
             <span className="month">{date.split(" ")[1]}</span>
           </div>
           <Row type="flex" justify="start">
-            {tags.map((tag: string) => (
+            {data.tags.tags.map((tag: string) => (
               <p className="post-tag">#{tag}</p>
             ))}
           </Row>
