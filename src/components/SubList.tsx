@@ -27,11 +27,13 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
   return (
     <Row
       type="flex"
+      cy-test="type-menu-test"
       justify="space-around"
       style={{ marginBottom: "1rem", marginTop: "1rem" }}
     >
       <Col span={10}>
         <Button
+          cy-test="all-click-test"
           id="1"
           onClick={e => ToggleSetting(e.currentTarget.id)}
           className={`sub-list-link ${id === "1" && "selected"}`}
@@ -41,6 +43,7 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
       </Col>
       <Col span={10}>
         <Button
+          cy-test="blog-click-test"
           id="2"
           onClick={e => ToggleSetting(e.currentTarget.id)}
           className={`sub-list-link ${id === "2" && "selected"}`}
@@ -50,6 +53,7 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
       </Col>
       <Col span={2}>
         <Button
+          cy-test="lifeStyle-click-test"
           id="3"
           onClick={e => ToggleSetting(e.currentTarget.id)}
           className={`sub-list-link ${id === "3" && "selected"}`}
