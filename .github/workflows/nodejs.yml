@@ -43,6 +43,8 @@ jobs:
         env:
            CI: true
            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+           SPACE_ID: ${{ secrets.SPACE_ID }}
+           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Upload coverage to Codecov
         run: |
           npm install -g codecov
