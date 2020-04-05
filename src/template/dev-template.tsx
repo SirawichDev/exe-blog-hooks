@@ -22,7 +22,6 @@ const DevTemplate: FC<Props> = ({ data }) => {
   } = data.dev
   const [mainImage, ...devImages] = images
   const [width, height] = UseResolution()
-  console.log("www", width)
   return (
     <Layout>
       <Row type="flex" justify="space-between">
