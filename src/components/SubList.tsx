@@ -2,7 +2,7 @@ import React, { useEffect, useState, FC, Props } from "react"
 import { Col, Row, Button } from "antd"
 import "../sass/sublist.scss"
 
-type SubListProps = { filterType: (b:string) => void }
+type SubListProps = { filterType: (b: string) => void }
 const SubList: FC<SubListProps> = ({ filterType }) => {
   const [id, setId] = useState("1")
 
@@ -13,7 +13,7 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
         filterType("ALL")
         break
       case "2":
-        filterType("blog")
+        filterType("dev-blog")
         break
       case "3":
         filterType("lifestyle")
@@ -22,7 +22,7 @@ const SubList: FC<SubListProps> = ({ filterType }) => {
   }
   useEffect(() => {
     filterType("ALL")
-  },[])
+  }, [])
 
   return (
     <Row
