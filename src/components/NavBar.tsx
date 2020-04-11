@@ -13,7 +13,7 @@ export const LogoQuery = graphql`
   }
 `
 
-export interface INode {}
+export interface INode { }
 interface Props {
   location?: any
 }
@@ -49,7 +49,7 @@ const NavBar: FC<Props> = ({ location }) => {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link state={{ pathName: "blog" }} to="/blog">
+                  <Link state={{ pathName: "dev-blogs" }} to="/dev-blogs">
                     <Icon type="code" />
                     Blog{" "}
                   </Link>
@@ -57,7 +57,7 @@ const NavBar: FC<Props> = ({ location }) => {
                 <Menu.Item>
                   {" "}
                   <Link to="/lifestyle" state={{ pathName: "life_style" }}>
-                    <Icon type="sync" spin />
+                    <Icon type="sync" spin={true} />
                     Lift Style
                   </Link>
                 </Menu.Item>
